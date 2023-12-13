@@ -17,7 +17,18 @@ function onSubmit(e)
     }
     else
     {
-       localStorage.setItem('username',nameInput.value);
-       localStorage.setItem('useremail',emailInput.value);
+        let my_obj=
+        {
+             UserName:nameInput.value,
+            
+             UserEmail:emailInput.value
+        };
+        let obj_to_string=JSON.stringify(my_obj);
+
+       localStorage.setItem("userdetail",obj_to_string);
+       
+       let string_to_obj=JSON.parse(localStorage.getItem("userdetail"));
+       console.log(string_to_obj);
+       
     }
 }
